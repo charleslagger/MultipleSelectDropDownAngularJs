@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link href="css/Bootstrap/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="css/multiselect.css" media="screen" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+	<div class="container-fluid" ng-app="appContent" ng-controller="appController" style="padding-top:12%;padding-left:33%">
+		<div class="row">
+			<aadropdownmultiselect
+				model="selectedOptions"
+				multiselectoptions="options">
+			</aadropdownmultiselect>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/Angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/Angular/multiselectdropdown.js"></script>
+	<script type="text/javascript" src="js/Angular/ui-bootstrap-tpls-0.13.0.min.js"></script>
+	<script type="text/javascript">
+	var doOnLoad = function(){
+		var appContentModule = angular.module("appContent", ['ui.bootstrap', 'aaangularjsapplication'])
+
+		appContentModule.controller("appController", ['$scope', '$http', function ($scope, $http) {
+
+			$scope.selectedOptions = [];
+			// [{
+			// 		value:'1',
+			// 		text:'Bangalore',
+			// 		selected:'1',
+			// 		disabled: true,
+			// },{
+			// 		value:'3',
+			// 		text:'Nainital',
+			// 		selected:'1'
+			// }];
+
+			$scope.options = [{
+					value:'1',
+					text:'Bangalore'
+			},{
+					value:'2',
+					text:'Goa'
+			},{
+					value:'3',
+					text:'Nainital'
+			},{
+					value:'4',
+					text:'Hyderabad'
+			},{
+					value:'5',
+					text:'Mumbai'
+			},{
+					value:'6',
+					text:'Delhi'
+			},{
+					value:'7',
+					text:'Ladakh'
+			},{
+					value:'8',
+					text:'Jaisalmer'
+			},{
+					value:'9',
+					text:'Udaipur'
+			}];
+
+		}]);
+
+	}();
+	</script>
+</body>
+</html>
